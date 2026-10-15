@@ -59,6 +59,7 @@ function novaTarefa(){
     });
     
 }
+//Teste
 function deletarTarefa(id, elemento){
   
     let li = elemento.closest("li");
