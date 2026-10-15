@@ -45,15 +45,12 @@ function novaTarefa(){
         titulo:titulo.value,
         descricao: descricao.value
     }
-  // 1. Esconde a modal imediatamente
     fecharModal();
     let form = document.querySelector("#criarTarefa form");
     form.reset();
 
-    // 2. Insere a nova tarefa na tela na hora (0ms delay)
     inserirTarefas([tarefa]);
 
-    // 3. Salva no servidor em segundo plano
     fetch("http://localhost:3000/tarefas", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -63,11 +60,9 @@ function novaTarefa(){
 }
 function deletarTarefa(id, elemento){
   
-    // 1. Encontra a <li> da tarefa e remove imediatamente da tela
     let li = elemento.closest("li");
     li.remove();
 
-    // 2. Se não restar mais nenhuma <li>, mostra a mensagem vazia
     let lisRestantes = document.querySelectorAll("#lista li");
     if(lisRestantes.length === 0){
         document.querySelector(".mensagem").style.display = "block"; 
