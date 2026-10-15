@@ -45,7 +45,7 @@ function novaTarefa(){
         titulo:titulo.value,
         descricao: descricao.value
     }
-    
+  // 1. Esconde a modal imediatamente
     fecharModal();
     let form = document.querySelector("#criarTarefa form");
     form.reset();
